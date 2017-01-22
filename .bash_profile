@@ -20,7 +20,7 @@ alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
-alias go='git checkout '
+alias gco='git checkout '
 alias gp='git push'
 alias gpf='git push -f'
 alias gk='gitk --all&'
@@ -30,6 +30,6 @@ alias rbm="git checkout master && git pull --rebase origin master && git checkou
 
 
 # Go config.
-export GOROOT=$HOME/go
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/Go
+export GOPATH=~/github/private/playground/go
