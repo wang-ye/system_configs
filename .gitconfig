@@ -1,0 +1,33 @@
+  [alias]
+    s = status
+    d = diff
+    a = add
+    co = checkout
+    b = branch
+    ba = branch -a
+    l = log
+    f = fetch
+    r = reset
+    p = pull
+    pr = pull --rebase
+    ps = push
+    pom = push origin master
+    cp = cherry-pick
+    up = !git fetch origin && git rebase origin/master
+  [color]
+    ui = auto
+  [core]
+    editor = vi
+    excludesfile = ~/.gitignore
+    precomposeunicode = true
+  [push]
+    default = current
+  [rerere]
+    enabled = 1
+  [user]
+    name = Ye Wang
+    email = stardust12341234@gmail.com
+  [diff]
+    tool = kdiff3
+  [merge]
+    tool = kdiff3

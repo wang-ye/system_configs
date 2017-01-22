@@ -1,0 +1,2 @@
+" Disable the general as I want to diables some of them.
+let g:spf13_bundle_groups=['writing', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]

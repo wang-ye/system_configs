@@ -1,0 +1,64 @@
+set nu
+syntax on
+set showmatch
+set cmdheight=2 "command bar is 2 high
+set backspace=indent,eol,start "set backspace function
+set hlsearch "highlight searched things
+set incsearch "incremental search
+set ignorecase "ignore case
+set textwidth=0
+set autoread "auto read when file is changed from outside
+set ruler "show current position
+set nocp
+set hidden
+set autochdir
+set vb t_vb=  "no visual bell any more!
+
+set background=light
+set wrap&
+set wrap
+
+filetype on
+filetype plugin on
+
+if has("autocmd")
+  filetype indent on
+endif
+
+" My personal mappings
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
+
+" Window navigation shortcuts.
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+map <S-E> :tabnew <CR>
+map <S-N> :tabn <CR>
+map <S-P> :tabp <CR>
+map <S-C> :tabc <CR>
+
+:cnoremap <C-A> <Home>
+:cnoremap <C-F> <Right>
+:cnoremap <C-B> <Left>
+:cnoremap <Esc>b <S-Left>
+:cnoremap <Esc>f <S-Right>
+
+" Override status line.
+if has('statusline')
+    set laststatus=2
+
+    " Broken down into easily includeable segments
+    set statusline=%<%f\                     " Filename
+    set statusline+=%w%h%m%r                 " Options
+    if !exists('g:override_spf13_bundles')
+        set statusline+=%{fugitive#statusline()} " Git Hotness
+    endif
+    set statusline+=\ [%{&ff}/%Y]            " Filetype
+    set statusline+=\ [%{getcwd()}]          " Current dir
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
