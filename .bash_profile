@@ -40,3 +40,5 @@ export HISTCONTROL=ignoreboth:erasedups
 # -a append a new command into bash_history immediately.
 # -n re-read command history.
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a ; history -n"
+export HISTIGNORE="top:htop:ls:cd:pwd:s:pwd"
+export HISTSIZE=10000
