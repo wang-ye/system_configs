@@ -33,3 +33,10 @@ alias rbm="git checkout master && git pull --rebase origin master && git checkou
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=~/github/private/playground/go
+
+# HISTCONTROL ignores the duplicates.
+export HISTCONTROL=ignoreboth:erasedups
+# History command hack.
+# -a append a new command into bash_history immediately.
+# -n re-read command history.
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a ; history -n"
