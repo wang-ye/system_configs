@@ -1,5 +1,13 @@
 # Change the terminal prompt. Make the prompt look like this:
 # Mon Apr 02 12:06:50 ~/code/my_dir (master) $
+
+# Need to download the git-prompt.sh first.
+# curl -o ~/.git-prompt.sh \
+#    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+if [ -f ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+  export PS1='Geoff[\W]$(__git_ps1 "(%s)"): '
+fi
 export PS1="\[\033[01;32m\]\t \w\$(__git_ps1) \[\033[00m\]\$ "
 
 # On a Linux machine, you may need to source the .bash_profile in .bashrc.
