@@ -37,6 +37,11 @@ alias gac='git add . && git commit -am '
 alias rbm="git checkout master && git pull --rebase origin master && git checkout - && git rebase master"
 
 
+# Go config.
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=~/github/private/playground/go
+
 # HISTCONTROL ignores the duplicates.
 export HISTCONTROL=ignoreboth:erasedups
 # History command hack.
