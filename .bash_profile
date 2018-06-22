@@ -35,6 +35,7 @@ alias gk='gitk --all&'
 alias gx='gitx --all'
 alias gac='git add . && git commit -am '
 alias rbm="git checkout master && git pull --rebase origin master && git checkout - && git rebase master"
+alias rbp="git checkout production && git pull --rebase origin production && git checkout - && git rebase production"
 
 
 # HISTCONTROL ignores the duplicates.
@@ -45,3 +46,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a ; history -n"
 export HISTIGNORE="top:htop:ls:cd:pwd:s:pwd"
 export HISTSIZE=10000
+# Go config.
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=~/go
