@@ -38,15 +38,27 @@ alias rbm="git checkout master && git pull --rebase origin master && git checkou
 alias rbp="git checkout production && git pull --rebase origin production && git checkout - && git rebase production"
 
 
-# HISTCONTROL ignores the duplicates.
-export HISTCONTROL=ignoreboth:erasedups
-# History command hack.
-# -a append a new command into bash_history immediately.
-# -n re-read command history.
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -a ; history -n"
-export HISTIGNORE="top:htop:ls:cd:pwd:s:pwd"
-export HISTSIZE=10000
 # Go config.
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=~/go
+
+# HISTCONTROL ignores the duplicates.
+# # History command hack.
+# # -a append a new command into bash_history immediately.
+# # -n re-read command history.
+
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=10000                     # big history
+export HISTFILESIZE=10000                 # big history
+export HISTIGNORE="top:htop:ls:cd:pwd:s:pwd"
+shopt -s histappend                      # append to history, don't overwrite it
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# https://apple.stackexchange.com/questions/57569/how-to-share-history-between-terminal-tabs
+# https://superuser.com/questions/950403/bash-history-not-preserved-between-terminal-sessions-on-mac/985099
+export SHELL_SESSION_HISTORY=0           # mac only fix
+
+alias xcode="open -a Xcode"
+
